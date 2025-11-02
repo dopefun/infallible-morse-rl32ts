@@ -1,0 +1,146 @@
+/* --- Глобальные стили и переменные --- */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --background-color: #f4f7f6;
+  --card-background: #ffffff;
+  --text-color: #333;
+  --text-secondary: #6c757d;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: #e9ecef;
+  --border-radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 40px 20px;
+}
+
+/* --- Основной контейнер и заголовок --- */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-container h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+/* --- Сетка для карточек --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* --- Стилизация карточки сотрудника --- */
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid var(--border-color);
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--text-secondary);
+  margin: 0 0 15px;
+  font-size: 1em;
+}
+
+/* --- Стили для кнопок --- */
+.card button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.card button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* --- Блок с дополнительной информацией (email) --- */
+.details {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+/* --- Стили для задания из 3-й работы (список постов) --- */
+.posts-container {
+  width: 100%;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.posts-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.posts-container li {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.posts-container li:last-child {
+  border-bottom: none;
+}
+
+.loading-text,
+.error-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 15px;
+}
